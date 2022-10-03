@@ -1,0 +1,277 @@
+/* RESETS AND GENERAL SETTINGS */ 
+
+:root {
+    --color-text-main: #231B3F;
+    --color-text-secondary: #8B8B8B;
+    --color-text-light: white; 
+    --color-primary: #0D17D9;
+    --color-secondary: #7718D9;
+    --color-tertiary: #02C5E3;
+    --color-link: #4353FF;
+    --color-gradient: linear-gradient(#7718D9, #0D17D9);
+    --background-color-medium: #F6F6F6;
+    --background-color-light: #F5F6F8;
+    --background-color-ultra-light: #FAFAFA; 
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--color-text-main); 
+    outline-color: var(--color-primary);
+}
+
+html {
+    font-size: 16px;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, 
+ul {
+    list-style: none;
+}
+
+blockquote, 
+q {
+    quotes: none;
+}
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    color: var(--color-text-main);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--color-link);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.17rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 0.83rem;
+}
+
+h6 {
+    font-size: 0.67rem;
+}
+
+p, 
+li,
+a {
+    font-size: 1rem;
+}
+
+/*HEADER*/ 
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1340px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header__hamburger-menu-wrapper {
+    flex-basis: 33.33%;
+}
+
+.header__hamburger-menu {
+    width: 50px;
+    height: 50px;
+    padding: 7px;
+    background-color: transparent;
+    border: none;
+}
+
+.header__hamburger-menu svg {
+    width: 100%;
+    height: auto;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 33.33%;
+}
+
+.header__logo-image-mobile {
+    width: 48px;
+}
+
+.header__logo-image-desktop {
+    display: none;
+}
+
+.header__main-nav-items { 
+    display: none;
+    justify-content: space-between;
+}
+  
+.header__main-nav-item {
+    padding: 0 50px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.header__button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 33.33%;
+}
+
+.header__button {
+    padding: 1.1em 1.8em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+}
+
+.header__button:hover,
+.header__button:focus {
+    background-image: var(--color-gradient);
+}
+
+@media only screen and (min-width: 834px) {
+    
+    /*HEADER*/ 
+
+    .header__hamburger-menu-wrapper,
+    .header__logo-image-mobile {
+        display: none;
+    }
+
+    .header__logo,
+    .header__button-wrapper {
+        flex-basis: auto;
+    }
+
+    .header__logo-image-desktop {
+        display: flex;
+        width: 10.5rem;
+    }
+
+    .header__main-nav {
+        flex-grow: 1;
+    }
+
+    .header__main-nav-items { 
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .header__main-nav-item {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .header__main-nav-item a {
+        white-space: nowrap;
+        font-size: 0.875rem;
+    }
+
+    .header__button {
+        padding: 0.5em 2.3em;
+        font-size: 0.75rem;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+
+    /*HEADER*/ 
+
+    .header__logo-image-desktop {
+        width: 12rem;
+    }
+
+    .header__main-nav-item {
+        font-size: 1rem;
+    }
+
+    .header__button {
+        padding: 0.5em 2.85em;
+        font-size: 0.90rem
+    }
+
+}
