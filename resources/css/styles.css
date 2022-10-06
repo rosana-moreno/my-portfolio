@@ -5,13 +5,16 @@
     --color-text-secondary: #8B8B8B;
     --color-text-light: white; 
     --color-primary: #0D17D9;
+    --color-primary-light-shade: #0285E6;
     --color-secondary: #7718D9;
+    --color-secondary-light-shade: #7F56E6;
     --color-tertiary: #02C5E3;
     --color-link: #4353FF;
-    --color-gradient: linear-gradient(#7718D9, #0D17D9);
+    --color-gradient: linear-gradient(0deg, #7718D9, #0D17D9);
     --background-color-medium: #F6F6F6;
     --background-color-light: #F5F6F8;
     --background-color-ultra-light: #FAFAFA; 
+    --backbround--color-gradient-light: linear-gradient(0deg, white, #FCFCFC 30%, #FAFAFA);
 }
 
 *,
@@ -57,11 +60,12 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+    font-family: 'Ubuntu', sans-serif;
     line-height: 1;
 }
 
 ol, 
-ul {
+ul {    
     list-style: none;
 }
 
@@ -123,7 +127,7 @@ a {
     font-size: 1rem;
 }
 
-/*HEADER*/ 
+/* HEADER */ 
 
 header {
     position: fixed;
@@ -131,17 +135,19 @@ header {
     left: 0;
     right: 0;
     width: 100%;
+    background-color: white;
+    z-index: 1;
     overflow: hidden;
 }
 
 .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     max-width: 1340px;
     height: 70px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header__hamburger-menu-wrapper {
@@ -169,7 +175,7 @@ header {
 }
 
 .header__logo-image-mobile {
-    width: 48px;
+    width: 3rem;
 }
 
 .header__logo-image-desktop {
@@ -184,8 +190,11 @@ header {
 .header__main-nav-item {
     padding: 0 50px;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 12px;
     font-weight: 400;
+}
+
+.header__main-nav-item a {
+    font-size: 0.875rem;
 }
 
 .header__button-wrapper {
@@ -195,27 +204,123 @@ header {
     flex-basis: 33.33%;
 }
 
-.header__button {
-    padding: 1.1em 1.8em;
+.button {
+    padding: 0.8em 1.5em;
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    border: solid 0.2em var(--color-primary);
+    border-radius: 5em;
     font-size: 0.75rem;
     font-weight: 700;
     white-space: nowrap;
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
-    border: none;
-    border-radius: 25px;
     cursor: pointer;
     outline: none;
 }
 
-.header__button:hover,
-.header__button:focus {
-    background-image: var(--color-gradient);
+/* Temp solution it will be colorful gradient*/
+.button:hover,
+.button:focus {
+    background: var(--color-primary-light-shade);
+    border: solid 0.25em var(--color-primary-light-shade);
+}
+
+/* Temp solution it will be ghost but with a colorful gradient*/
+.button-ghost {
+    display: inline-block;
+    background: white;
+    border: solid 0.2em var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Temp solution it will be colorful gradient or primary color*/
+.button-ghost:hover,
+.button-ghost:focus {
+    background: white;
+    color: var(--color-primary-light-shade);
+    border: solid 0.25em var(--color-primary-light-shade);
+}   
+
+/* HERO */ 
+
+.hero {
+    display: flex;
+    justify-content: center;
+    background: var(--backbround--color-gradient-light);
+    color: var(--color-text-main);
+    text-align: center;
+}
+
+.hero__container {
+    position: relative;
+    top: 70px;
+    width: 100%;
+    max-width: 1340px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__main-image {
+    width: 85vw;
+    height: auto;
+    max-width: 490px;
+    max-height: 305.92px;
+}
+
+.hero__text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__tittle {
+    padding: 0.7em 0 0.1em 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+}
+
+.hero__subtittle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+.hero__tittle-accent {
+    background-image: linear-gradient(var(--color-secondary), var(--color-primary));
+    background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero__description {
+    max-width: 75vw;
+    margin: 0 auto;
+    padding: 1.2em 0;
+    color: var(--color-text-secondary);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 2;
+}
+
+.hero__buttons-wrapper {
+    padding-top: 0.5em;
+    min-width: 245px;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media only screen and (min-width: 834px) {
     
-    /*HEADER*/ 
+    /* HEADER */ 
 
     .header__hamburger-menu-wrapper,
     .header__logo-image-mobile {
@@ -228,8 +333,8 @@ header {
     }
 
     .header__logo-image-desktop {
+        width: 12rem;
         display: flex;
-        width: 10.5rem;
     }
 
     .header__main-nav {
@@ -246,32 +351,101 @@ header {
         padding-right: 0px;
     }
 
-    .header__main-nav-item a {
-        white-space: nowrap;
-        font-size: 0.875rem;
+    .header__main-nav-item a,
+    .hero__description {
+        font-size: 0.9375rem;
     }
 
-    .header__button {
-        padding: 0.5em 2.3em;
-        font-size: 0.75rem;
+    .header__main-nav-item a {
+        white-space: nowrap;
+    }
+
+    .button {
+        padding: 0.7em 2.5em;
+        font-size: 0.8125rem;
+    }
+
+    /* HERO */ 
+
+    .hero__container {
+        top: 100px;
+    }
+
+    .hero__main-image {
+        width: 70vw;
+        max-width: none;
+        max-height: none;
+    }
+
+    .hero__tittle {
+        font-size: 3rem;
+    }
+
+    .hero__subtittle {
+        font-size: 2rem;
+    }
+
+    .hero__buttons-wrapper {
+        min-width: 335px;
+        padding-top: 1em;
     }
 }
 
 @media only screen and (min-width: 1080px) {
 
-    /*HEADER*/ 
+    /* HEADER */ 
 
-    .header__logo-image-desktop {
-        width: 12rem;
+    .header__container {
+        padding: 0 40px;
     }
 
-    .header__main-nav-item {
+    .header__logo-image-desktop {
+        width: 13rem;
+    }
+
+    .header__main-nav-item a,
+    .hero__description {
         font-size: 1rem;
     }
 
-    .header__button {
-        padding: 0.5em 2.85em;
-        font-size: 0.90rem
+    .button {
+        padding: 0.8em 3em;
+        font-size: 0.875rem;
     }
 
+    /* HERO */ 
+
+    .hero {
+        padding-bottom: 100px;
+    }
+
+    .hero__container {
+        top: 120px;
+        flex-direction: row-reverse;
+    }
+    .hero__content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero__main-image {
+        width: 46vw;
+    }
+
+    .hero__text-wrapper {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero__tittle {
+        font-size: 3.5rem;
+    }
+
+    .hero__description {
+        padding: 1.4em 4em 1.4em 0;
+    }
+
+    .hero__buttons-wrapper {
+        min-width: 365px;
+    }
 }
