@@ -15,7 +15,8 @@
     --background-color-medium: #F6F6F6;
     --background-color-light: #F5F6F8;
     --background-color-ultra-light: #FAFAFA; 
-    --backbround--color-gradient-light: linear-gradient(0deg, white, #FCFCFC 30%, #FAFAFA);
+    --backbround-color-gradient-light: linear-gradient(0deg, white, #FCFCFC 30%, #FAFAFA);
+    --backbround-color-gradient-colorful: linear-gradient(0deg, #0D17D9, #7718D9 70%);
 }
 
 *,
@@ -139,7 +140,7 @@ a {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background: var(--backbround--color-gradient-light);
+    background: var(--backbround-color-gradient-light);
 }
 
 .section__container {
@@ -211,6 +212,29 @@ a {
     justify-content: space-between;
 }
 
+/* BULLETS GRID */
+
+.section__bullets-grid {
+    padding: 0 0 20px 0;
+    display: inline-grid;
+    grid-template-columns: max-content max-content;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.section__bullet-wrapper-icon-and-text {
+    margin-bottom: 5px;
+    display: flex;
+    font-size: 14px;
+}
+
+.section__bullet-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
 /* BUTTONS */
 
 .button {
@@ -240,7 +264,7 @@ a {
 /* Temp solution it will be a colorful gradient*/
 .button-outlined {
     display: inline-block;
-    background: white;
+    background: transparent;
     border: solid 0.2em var(--color-primary);
     color: var(--color-primary);
 }
@@ -248,7 +272,7 @@ a {
 /* Temp solution it will be colorful gradient or primary color*/
 .button-outlined:hover,
 .button-outlined:focus {
-    background: white;
+    background: transparent;
     color: var(--color-primary-light-shade);
     border: solid 0.2em var(--color-primary-light-shade);
 }   
@@ -564,7 +588,43 @@ header {
     align-items: stretch;
 }
 
-/* README */
+/* ABOUT-ME */
+
+.about-me {
+    background: var(--backbround-color-gradient-colorful);
+}
+
+.about-me__text-wrapper {
+    padding: 2em 0 0;
+}
+
+.about-me__tittle,
+.about-me__subtittle,
+.about-me__description,
+.about-me__bullet-text {
+    color: var(--color-text-light);
+}
+
+.about-me__button {
+    background: var(--background-color-light);
+    color: var(--color-primary);
+}
+
+.about-me__button-outlined {
+    background: transparent;
+    color: var(--color-text-light);
+    border: solid 0.2em var(--color-text-light);
+}
+
+@media only screen and (min-width: 650px) {
+
+    /* SECTION COMMON STYLES */ 
+
+    .section__bullets-grid {
+        grid-template-columns: max-content max-content max-content;
+        column-gap: 40px;
+    }
+}
 
 @media only screen and (min-width: 834px) {
 
@@ -699,6 +759,8 @@ header {
         padding-bottom: 5px;
     }
 
+    /* ABOUT-ME */
+
 }
 
 @media only screen and (min-width: 1080px) {
@@ -737,6 +799,11 @@ header {
 
     .section__buttons-wrapper {
         min-width: 380px;
+    }
+
+    .section__bullets-grid {
+        grid-template-columns: max-content max-content;
+        column-gap: 50px;
     }
 
     /* BUTTONS */
@@ -814,6 +881,26 @@ header {
 
     .portfolio__text-wrapper {
         padding-bottom: 15px;
+    }
+
+    /* ABOUT-ME */
+
+    .about-me__container {
+        flex-direction: row;
+    }
+
+    .about-me__text-wrapper {
+        padding: 0;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .about-me__content-wrapper {
+        align-items: flex-start;
+    }
+
+    .about-me__description {
+        max-width: 620px;
     }
 
 }
