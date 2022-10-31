@@ -481,6 +481,82 @@ a {
     color: var(--color-text-main);
 }
 
+/* POST'S CARDS - BLOG */
+
+.posts-cards__wrapper {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.posts-cards__item {
+    position: relative;
+    width: 309px;
+    height: 450px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+}
+
+.posts-cards__item-image-link {
+    height: 215px;
+    width: 100%;
+    display: block;
+}
+
+.posts-cards__item-image {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px 18px 0 0;
+}
+
+.posts-cards__item-text-holder {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 28px;
+    text-align: left;
+}
+
+.posts-cards__item-eyebrow {    
+    width: 204px;
+    margin-bottom: 0.4em;
+    padding-bottom: 3px;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.87rem;
+    font-weight: 400;
+    color: var(--color-text-medium);
+    line-height: 1.33337;
+}
+
+.posts-cards__item-tittle {
+    padding-top: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    line-height: 1.19048;
+}
+
+.posts-cards__item-excerpt {
+    margin-top: 0;
+    max-height: 253px; /* cómo hago para que no se muestre si es más largo que esto */
+    padding-top: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
 /* HEADER */ 
 
 header {
@@ -684,6 +760,14 @@ header {
     .grid-figures__figure-text {
         font-size: 0.8125rem;
     }
+
+    /* POST'S CARDS - BLOG */
+
+        .posts-cards__wrapper {
+            max-width: 700px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     
     /* HEADER */
     
@@ -759,8 +843,6 @@ header {
         padding-bottom: 5px;
     }
 
-    /* ABOUT-ME */
-
 }
 
 @media only screen and (min-width: 1080px) {
@@ -826,6 +908,13 @@ header {
 
     .grid-figures__figure-image svg {
         height: 25px;
+    }
+
+    /* POST'S CARDS - BLOG */
+
+    .posts-cards__wrapper {
+        max-width: 1100px;
+        padding: 30px 0;
     }
 
     /* HEADER */ 
